@@ -169,6 +169,11 @@ tr:hover td {
     transform: scale(1.01);
 }
 
+td i {
+    margin-right: 8px;
+    color: #a0e7e5;
+}
+
 .error-input, .note-input {
     width: 100%;
     padding: 8px;
