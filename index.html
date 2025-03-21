@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROM Tester for Redmi Note 11 4G</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>ROM Tester for Redmi Note 11 4G</h1>
+        <h1><i class="fas fa-mobile-alt"></i> ROM Tester for Redmi Note 11 4G</h1>
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="nonRooted">Non-Rooted</button>
+            <button class="tab-btn" data-tab="rooted">Rooted</button>
+        </nav>
     </header>
     <div class="container">
         <!-- Non-Rooted Table -->
-        <div class="table-section" id="nonRootedSection">
+        <div class="table-section active" id="nonRootedSection">
             <div class="table-header">
-                <h2>Non-Rooted Device</h2>
-                <button class="download-btn" data-table="nonRooted">Download as CSV</button>
+                <h2><i class="fas fa-lock-open"></i> Non-Rooted Device</h2>
+                <button class="download-btn" data-table="nonRooted"><i class="fas fa-download"></i> Download CSV</button>
             </div>
             <table id="nonRootedTable">
                 <thead>
@@ -62,8 +67,8 @@
         <!-- Rooted Table -->
         <div class="table-section" id="rootedSection">
             <div class="table-header">
-                <h2>Rooted Device</h2>
-                <button class="download-btn" data-table="rooted">Download as CSV</button>
+                <h2><i class="fas fa-lock"></i> Rooted Device</h2>
+                <button class="download-btn" data-table="rooted"><i class="fas fa-download"></i> Download CSV</button>
             </div>
             <table id="rootedTable">
                 <thead>
