@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
     <header>
@@ -21,7 +22,7 @@
         <div class="table-section active" id="nonRootedSection">
             <div class="table-header">
                 <h2><i class="fas fa-lock-open"></i> Non-Rooted Device</h2>
-                <button class="download-btn" data-table="nonRooted"><i class="fas fa-download"></i> Download CSV</button>
+                <button class="download-btn" data-table="nonRooted"><i class="fas fa-camera"></i> Save as Image</button>
             </div>
             <table id="nonRootedTable">
                 <thead>
@@ -68,7 +69,7 @@
         <div class="table-section" id="rootedSection">
             <div class="table-header">
                 <h2><i class="fas fa-lock"></i> Rooted Device</h2>
-                <button class="download-btn" data-table="rooted"><i class="fas fa-download"></i> Download CSV</button>
+                <button class="download-btn" data-table="rooted"><i class="fas fa-camera"></i> Save as Image</button>
             </div>
             <table id="rootedTable">
                 <thead>
