@@ -11,6 +11,16 @@ window.onload = () => {
     loadData('rootedTable');
 };
 
+// Xử lý tab
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.table-section').forEach(s => s.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.getAttribute('data-tab') + 'Section').classList.add('active');
+    });
+});
+
 // Lưu dữ liệu vào localStorage
 function saveData(tableId) {
     const table = document.getElementById(tableId);
