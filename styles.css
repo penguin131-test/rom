@@ -1,6 +1,6 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #1e1e2f;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1e1e2f 0%, #2a2a3d 100%);
     color: #e0e0e0;
     margin: 0;
     padding: 20px;
@@ -19,39 +19,65 @@ header {
 
 h1 {
     font-size: 2.5em;
-    color: #00d4ff;
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    color: #a0e7e5;
+    text-shadow: 0 0 10px rgba(160, 231, 229, 0.5);
     animation: glow 2s infinite alternate;
 }
 
+h1 i {
+    margin-right: 10px;
+}
+
 @keyframes glow {
-    from { text-shadow: 0 0 5px rgba(0, 212, 255, 0.5); }
-    to { text-shadow: 0 0 15px rgba(0, 212, 255, 0.8); }
+    from { text-shadow: 0 0 5px rgba(160, 231, 229, 0.5); }
+    to { text-shadow: 0 0 15px rgba(160, 231, 229, 0.8); }
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tab-btn {
+    background: #2a2a3d;
+    color: #e0e0e0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.tab-btn.active {
+    background: #a0e7e5;
+    color: #1e1e2f;
+    transform: scale(1.05);
+}
+
+.tab-btn:hover {
+    background: #b39ddb;
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .table-section {
-    flex: 1;
-    min-width: 300px;
     background: #2a2a3d;
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
     animation: slideUp 0.5s ease-out;
+    display: none;
 }
 
-.table-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+.table-section.active {
+    display: block;
 }
 
 @keyframes slideUp {
@@ -63,30 +89,39 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 1.6em;
-    color: #00d4ff;
+    font-size: 1.8em;
+    color: #a0e7e5;
     margin: 0;
 }
 
+h2 i {
+    margin-right: 8px;
+}
+
 .download-btn {
-    background: #00d4ff;
+    background: #b39ddb;
     color: #1e1e2f;
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 600;
     position: relative;
     overflow: hidden;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .download-btn:hover {
-    background: #00b8d4;
+    background: #9575cd;
+    transform: scale(1.05);
+}
+
+.download-btn i {
+    margin-right: 5px;
 }
 
 .download-btn::after {
@@ -120,17 +155,18 @@ th, td {
 
 th {
     background: #3a3a4d;
-    color: #00d4ff;
-    font-weight: bold;
+    color: #a0e7e5;
+    font-weight: 600;
 }
 
 td {
     background: #2a2a3d;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 tr:hover td {
     background: #35354d;
+    transform: scale(1.01);
 }
 
 .error-input, .note-input {
@@ -141,15 +177,16 @@ tr:hover td {
     background: #1e1e2f;
     color: #e0e0e0;
     box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .error-input:focus, .note-input:focus {
-    border-color: #00d4ff;
+    border-color: #a0e7e5;
+    box-shadow: 0 0 5px rgba(160, 231, 229, 0.5);
     outline: none;
 }
 
 input[type="radio"] {
     margin: 0 8px;
-    accent-color: #00d4ff;
+    accent-color: #b39ddb;
 }
