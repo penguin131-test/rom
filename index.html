@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROM Tester for Redmi Note 11 4G</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>ROM Tester for Redmi Note 11 4G</h1>
+    </header>
+    <div class="container">
+        <!-- Non-Rooted Table -->
+        <div class="table-section" id="nonRootedSection">
+            <div class="table-header">
+                <h2>Non-Rooted Device</h2>
+                <button class="download-btn" data-table="nonRooted">Download as CSV</button>
+            </div>
+            <table id="nonRootedTable">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Function/Feature</th>
+                        <th>Pass</th>
+                        <th>Not Pass</th>
+                        <th>Not Tested</th>
+                        <th>Errors</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td rowspan="14">Hardware</td><td>Screen Display (Brightness)</td><td><input type="radio" name="nr_display1" value="pass"></td><td><input type="radio" name="nr_display1" value="notpass"></td><td><input type="radio" name="nr_display1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Touch Response</td><td><input type="radio" name="nr_display2" value="pass"></td><td><input type="radio" name="nr_display2" value="notpass"></td><td><input type="radio" name="nr_display2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>App Opening Speed</td><td><input type="radio" name="nr_perf1" value="pass"></td><td><input type="radio" name="nr_perf1" value="notpass"></td><td><input type="radio" name="nr_perf1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Multitasking</td><td><input type="radio" name="nr_perf2" value="pass"></td><td><input type="radio" name="nr_perf2" value="notpass"></td><td><input type="radio" name="nr_perf2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Rear Camera (Photo/Video)</td><td><input type="radio" name="nr_cam1" value="pass"></td><td><input type="radio" name="nr_cam1" value="notpass"></td><td><input type="radio" name="nr_cam1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Front Camera (Selfie)</td><td><input type="radio" name="nr_cam2" value="pass"></td><td><input type="radio" name="nr_cam2" value="notpass"></td><td><input type="radio" name="nr_cam2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Battery Life</td><td><input type="radio" name="nr_bat1" value="pass"></td><td><input type="radio" name="nr_bat1" value="notpass"></td><td><input type="radio" name="nr_bat1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Charging Speed</td><td><input type="radio" name="nr_bat2" value="pass"></td><td><input type="radio" name="nr_bat2" value="notpass"></td><td><input type="radio" name="nr_bat2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Speakers</td><td><input type="radio" name="nr_audio1" value="pass"></td><td><input type="radio" name="nr_audio1" value="notpass"></td><td><input type="radio" name="nr_audio1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Headphone Jack</td><td><input type="radio" name="nr_audio2" value="pass"></td><td><input type="radio" name="nr_audio2" value="notpass"></td><td><input type="radio" name="nr_audio2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Mobile Network (4G)</td><td><input type="radio" name="nr_conn1" value="pass"></td><td><input type="radio" name="nr_conn1" value="notpass"></td><td><input type="radio" name="nr_conn1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Wi-Fi</td><td><input type="radio" name="nr_conn2" value="pass"></td><td><input type="radio" name="nr_conn2" value="notpass"></td><td><input type="radio" name="nr_conn2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Bluetooth</td><td><input type="radio" name="nr_conn3" value="pass"></td><td><input type="radio" name="nr_conn3" value="notpass"></td><td><input type="radio" name="nr_conn3" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Fingerprint</td><td><input type="radio" name="nr_sensor1" value="pass"></td><td><input type="radio" name="nr_sensor1" value="notpass"></td><td><input type="radio" name="nr_sensor1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td rowspan="7">Software</td><td>System Stability</td><td><input type="radio" name="nr_os1" value="pass"></td><td><input type="radio" name="nr_os1" value="notpass"></td><td><input type="radio" name="nr_os1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>UI Smoothness</td><td><input type="radio" name="nr_os2" value="pass"></td><td><input type="radio" name="nr_os2" value="notpass"></td><td><input type="radio" name="nr_os2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Google Play Store</td><td><input type="radio" name="nr_feat1" value="pass"></td><td><input type="radio" name="nr_feat1" value="notpass"></td><td><input type="radio" name="nr_feat1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>DRM Widevine (Video Quality)</td><td><input type="radio" name="nr_feat2" value="pass"></td><td><input type="radio" name="nr_feat2" value="notpass"></td><td><input type="radio" name="nr_feat2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Notifications</td><td><input type="radio" name="nr_feat3" value="pass"></td><td><input type="radio" name="nr_feat3" value="notpass"></td><td><input type="radio" name="nr_feat3" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Double Tap to Wake</td><td><input type="radio" name="nr_feat4" value="pass"></td><td><input type="radio" name="nr_feat4" value="notpass"></td><td><input type="radio" name="nr_feat4" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Lift to Wake</td><td><input type="radio" name="nr_feat5" value="pass"></td><td><input type="radio" name="nr_feat5" value="notpass"></td><td><input type="radio" name="nr_feat5" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td rowspan="3">Overall</td><td>General Speed</td><td><input type="radio" name="nr_eval1" value="pass"></td><td><input type="radio" name="nr_eval1" value="notpass"></td><td><input type="radio" name="nr_eval1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Crashes or Reboots</td><td><input type="radio" name="nr_eval2" value="pass"></td><td><input type="radio" name="nr_eval2" value="notpass"></td><td><input type="radio" name="nr_eval2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Battery Drain</td><td><input type="radio" name="nr_eval3" value="pass"></td><td><input type="radio" name="nr_eval3" value="notpass"></td><td><input type="radio" name="nr_eval3" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Rooted Table -->
+        <div class="table-section" id="rootedSection">
+            <div class="table-header">
+                <h2>Rooted Device</h2>
+                <button class="download-btn" data-table="rooted">Download as CSV</button>
+            </div>
+            <table id="rootedTable">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Function/Feature</th>
+                        <th>Pass</th>
+                        <th>Not Pass</th>
+                        <th>Not Tested</th>
+                        <th>Errors</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td rowspan="14">Hardware</td><td>Screen Display (Brightness)</td><td><input type="radio" name="r_display1" value="pass"></td><td><input type="radio" name="r_display1" value="notpass"></td><td><input type="radio" name="r_display1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Touch Response</td><td><input type="radio" name="r_display2" value="pass"></td><td><input type="radio" name="r_display2" value="notpass"></td><td><input type="radio" name="r_display2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>App Opening Speed</td><td><input type="radio" name="r_perf1" value="pass"></td><td><input type="radio" name="r_perf1" value="notpass"></td><td><input type="radio" name="r_perf1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Multitasking</td><td><input type="radio" name="r_perf2" value="pass"></td><td><input type="radio" name="r_perf2" value="notpass"></td><td><input type="radio" name="r_perf2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Rear Camera (Photo/Video)</td><td><input type="radio" name="r_cam1" value="pass"></td><td><input type="radio" name="r_cam1" value="notpass"></td><td><input type="radio" name="r_cam1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Front Camera (Selfie)</td><td><input type="radio" name="r_cam2" value="pass"></td><td><input type="radio" name="r_cam2" value="notpass"></td><td><input type="radio" name="r_cam2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Battery Life</td><td><input type="radio" name="r_bat1" value="pass"></td><td><input type="radio" name="r_bat1" value="notpass"></td><td><input type="radio" name="r_bat1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Charging Speed</td><td><input type="radio" name="r_bat2" value="pass"></td><td><input type="radio" name="r_bat2" value="notpass"></td><td><input type="radio" name="r_bat2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Speakers</td><td><input type="radio" name="r_audio1" value="pass"></td><td><input type="radio" name="r_audio1" value="notpass"></td><td><input type="radio" name="r_audio1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Headphone Jack</td><td><input type="radio" name="r_audio2" value="pass"></td><td><input type="radio" name="r_audio2" value="notpass"></td><td><input type="radio" name="r_audio2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Mobile Network (4G)</td><td><input type="radio" name="r_conn1" value="pass"></td><td><input type="radio" name="r_conn1" value="notpass"></td><td><input type="radio" name="r_conn1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Wi-Fi</td><td><input type="radio" name="r_conn2" value="pass"></td><td><input type="radio" name="r_conn2" value="notpass"></td><td><input type="radio" name="r_conn2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Bluetooth</td><td><input type="radio" name="r_conn3" value="pass"></td><td><input type="radio" name="r_conn3" value="notpass"></td><td><input type="radio" name="r_conn3" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Fingerprint</td><td><input type="radio" name="r_sensor1" value="pass"></td><td><input type="radio" name="r_sensor1" value="notpass"></td><td><input type="radio" name="r_sensor1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td rowspan="8">Software</td><td>System Stability</td><td><input type="radio" name="r_os1" value="pass"></td><td><input type="radio" name="r_os1" value="notpass"></td><td><input type="radio" name="r_os1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>UI Smoothness</td><td><input type="radio" name="r_os2" value="pass"></td><td><input type="radio" name="r_os2" value="notpass"></td><td><input type="radio" name="r_os2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Google Play Store</td><td><input type="radio" name="r_feat1" value="pass"></td><td><input type="radio" name="r_feat1" value="notpass"></td><td><input type="radio" name="r_feat1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>DRM Widevine (Video Quality)</td><td><input type="radio" name="r_feat2" value="pass"></td><td><input type="radio" name="r_feat2" value="notpass"></td><td><input type="radio" name="r_feat2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Notifications</td><td><input type="radio" name="r_feat3" value="pass"></td><td><input type="radio" name="r_feat3" value="notpass"></td><td><input type="radio" name="r_feat3" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Root Access</td><td><input type="radio" name="r_feat4" value="pass"></td><td><input type="radio" name="r_feat4" value="notpass"></td><td><input type="radio" name="r_feat4" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Double Tap to Wake</td><td><input type="radio" name="r_feat5" value="pass"></td><td><input type="radio" name="r_feat5" value="notpass"></td><td><input type="radio" name="r_feat5" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Lift to Wake</td><td><input type="radio" name="r_feat6" value="pass"></td><td><input type="radio" name="r_feat6" value="notpass"></td><td><input type="radio" name="r_feat6" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td rowspan="3">Overall</td><td>General Speed</td><td><input type="radio" name="r_eval1" value="pass"></td><td><input type="radio" name="r_eval1" value="notpass"></td><td><input type="radio" name="r_eval1" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Crashes or Reboots</td><td><input type="radio" name="r_eval2" value="pass"></td><td><input type="radio" name="r_eval2" value="notpass"></td><td><input type="radio" name="r_eval2" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                    <tr><td>Battery Drain</td><td><input type="radio" name="r_eval3" value="pass"></td><td><input type="radio" name="r_eval3" value="notpass"></td><td><input type="radio" name="r_eval3" value="nottested" checked></td><td><input type="text" class="error-input"></td><td><input type="text" class="note-input"></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
