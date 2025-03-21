@@ -56,7 +56,7 @@ function loadData(tableId) {
     }
 }
 
-// Tải xuống bảng dưới dạng hình ảnh
+// Tải xuống bảng dưới dạng hình ảnh với watermark
 document.querySelectorAll('.download-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const tableId = btn.getAttribute('data-table') === 'nonRooted' ? 'nonRootedTable' : 'rootedTable';
@@ -67,6 +67,15 @@ document.querySelectorAll('.download-btn').forEach(btn => {
             scale: 2, // Độ phân giải cao hơn
             useCORS: true // Hỗ trợ tải tài nguyên từ nguồn khác nếu cần
         }).then(canvas => {
+            const ctx = canvas.getContext('2d');
+            
+            // Thêm watermark
+            ctx.font = '20px Inter';
+            ctx.fillStyle = 'rgba(160, 231, 229, 0.7)'; // Màu cyan nhạt, mờ nhẹ
+            ctx.textAlign = 'right';
+            ctx.fillText('@penguin1301', canvas.width - 20, canvas.height - 20);
+
+            // Tạo link tải xuống
             const link = document.createElement('a');
             link.download = tableId === 'nonRootedTable' ? 'ROM_Test_NonRooted.png' : 'ROM_Test_Rooted.png';
             link.href = canvas.toDataURL('image/png');
