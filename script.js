@@ -84,7 +84,7 @@ document.querySelectorAll('.download-btn').forEach(btn => {
             ctx.font = '20px Inter';
             ctx.fillStyle = 'rgba(160, 231, 229, 0.7)';
             ctx.textAlign = 'right';
-            ctx.fillText('@penguin130', canvas.width - 20, canvas.height - 20);
+            ctx.fillText('@penguin1301', canvas.width - 20, canvas.height - 20);
 
             // Tạo link tải xuống
             const link = document.createElement('a');
