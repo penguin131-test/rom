@@ -142,6 +142,12 @@ h2 i {
     height: 200px;
 }
 
+.table-wrapper {
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 8px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -157,6 +163,9 @@ th {
     background: #3a3a4d;
     color: #a0e7e5;
     font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 td {
@@ -183,6 +192,11 @@ td i {
     color: #e0e0e0;
     box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    white-space: normal;
+    word-wrap: break-word;
+    height: auto;
+    min-height: 40px;
+    resize: vertical;
 }
 
 .error-input:focus, .note-input:focus {
@@ -193,5 +207,5 @@ td i {
 
 input[type="radio"] {
     margin: 0 8px;
-    accent-color: #b39ddb;
+    accent-color: #ffeb3b;
 }
