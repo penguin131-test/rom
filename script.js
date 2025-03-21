@@ -56,31 +56,24 @@ function loadData(tableId) {
     }
 }
 
-// Tải xuống file CSV
+// Tải xuống bảng dưới dạng hình ảnh
 document.querySelectorAll('.download-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const tableId = btn.getAttribute('data-table') === 'nonRooted' ? 'nonRootedTable' : 'rootedTable';
         const table = document.getElementById(tableId);
-        const rows = table.querySelectorAll('tr');
-        let csv = 'Category,Function/Feature,Pass,Not Pass,Not Tested,Errors,Notes\n';
-        rows.forEach((row, index) => {
-            if (index === 0) return; // Bỏ qua header
-            const category = row.cells[0].innerText || row.previousElementSibling.cells[0].innerText;
-            const feature = row.cells[1].innerText;
-            const pass = row.querySelector('input[value="pass"]').checked ? 'Yes' : 'No';
-            const notPass = row.querySelector('input[value="notpass"]').checked ? 'Yes' : 'No';
-            const notTested = row.querySelector('input[value="nottested"]').checked ? 'Yes' : 'No';
-            const errors = row.querySelector('.error-input').value;
-            const notes = row.querySelector('.note-input').value;
-            csv += `"${category}","${feature}","${pass}","${notPass}","${notTested}","${errors}","${notes}"\n`;
+        
+        html2canvas(table, {
+            backgroundColor: '#2a2a3d', // Màu nền của bảng
+            scale: 2, // Độ phân giải cao hơn
+            useCORS: true // Hỗ trợ tải tài nguyên từ nguồn khác nếu cần
+        }).then(canvas => {
+            const link = document.createElement('a');
+            link.download = tableId === 'nonRootedTable' ? 'ROM_Test_NonRooted.png' : 'ROM_Test_Rooted.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }).catch(err => {
+            console.error('Error capturing table as image:', err);
+            alert('Có lỗi xảy ra khi chụp ảnh bảng. Vui lòng thử lại!');
         });
-
-        const blob = new Blob([csv], { type: 'text/csv' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = tableId === 'nonRootedTable' ? 'ROM_Test_NonRooted.csv' : 'ROM_Test_Rooted.csv';
-        a.click();
-        window.URL.revokeObjectURL(url);
     });
 });
